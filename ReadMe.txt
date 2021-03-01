@@ -32,3 +32,41 @@ que consideramos que os usuários poderiam cometer, focando principalmente naque
 
 No que toca ao contexto geral do trabalho, foi interessante perceber como Programação Orientada à Objetos facilita o desenvolvimento, mantendo o código mais legível e separando as funcionalidades,
 além de facilitar à explicação das etapas de desenvolvimento, fator crucial para projetos desenvolvidos em equipa.  
+
+
+////// ENGLISH VERSION //////
+
+The Program is based on 5 files:
+-Three Headers, nominated as POOL, PLAYER and BOARD;
+-Two programs named BoardBuilder and ScrabbleJunior;
+
+The function of each file is very specific, and is described as follows:
+-POOL.h: Stores the 3 vectors responsible for performing most of the tasks, they being the "letters" vector that stores all the letters arranged on the board,
+the "words" vector that stores all the words on the board, and the "monster" vector, a three-dimensional vector that stores a tuple containing each letter and its coordinates,
+inside a vector that contains the word, inside a vector that contains all the words;
+-PLAYER.h: Stores the player's score and name, as well as updating new values;
+-BOARD.h: Stores the dimension of the board and a vector containing the board itself;
+-BoardBuilder.cpp: Responsible for generating a new board, naming it, defining its size and the words that belonged to it;
+-ScrabbleJunior.cpp: Responsible for opening a board and performing all the activities of the game;
+
+The game works as follows:
+-When the user chooses a board, the program will check for its existence, if not confirmed, a standard board saved in the file folder will be used;
+-With the selected board, it will be defined the number of players and their respective names, in order to differentiate them;
+-A pair of values ​​of the type 'char' is generated randomly with the function "randomize ()", extracted from the vector "POOL.letters", so as not to generate letters that do not exist on the board
+or letters that have already been used;
+-In the "makemove ()" function, the player will decide which letter will be played first and its coordinate, which will have its value converted to integer by the "BOARD.tr ()" function,
+and using these values ​​to look in the "POOL.monstro" vector and check if the letter of the specified coordinate is the same as the one chosen by the player, and if it is the letter it will be marked by red color;
+-When all letters of a word have been chosen, the player will receive one more point;
+-The game ends when one of the players finishes more than half of the words on the board, verified in the function "end_game ()";
+-Every game takes place within a "while" cycle, so that it is possible to restart the game at the end;
+
+It was considered the possibility of being able to play with the machine, using standard algorithms for solving puzzles as a way to emulate an Artificial Intelligence and allow
+the game worked with only one Player. This possibility has been ruled out as the changes needed to implement this functionality would hinder the functioning of the current game,
+in addition to the need to restructure all classes and functions in order to include this new functionality. We concluded that all the inconvenience that would be generated when trying to implement
+such functionality would divert our attention from the initial theme of the project, and therefore, we kept the features originally described.
+
+We had a certain difficulty regarding the handling of errors, since it is considerably complex all the possibilities of entries that the user can try, so the errors treated were those
+that we think users could commit to, focusing mainly on those most expected.
+
+Regarding the general context of the work, it was interesting to see how Object Oriented Programming facilitates development, keeping the code more readable and separating the features,
+in addition to facilitating the explanation of the development stages, a crucial factor for projects developed as a team.
